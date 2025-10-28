@@ -1,0 +1,105 @@
+.right-sidebar {
+  width: 300px;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.sidebar-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #8B0000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.ads-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.ad-item {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  background: white;
+}
+
+.ad-item:hover {
+  transform: translateY(-5px);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.image-ad {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, #8B0000, #FF6B6B);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.ad-placeholder {
+  padding: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.ad-label {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+  .right-sidebar {
+    width: 250px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .right-sidebar {
+    width: 100%;
+    position: static;
+    margin-right: 0;
+  }
+  
+  .ads-container {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px 0;
+  }
+  
+  .ad-item {
+    min-width: 280px;
+  }
+}

@@ -1,0 +1,117 @@
+.left-sidebar {
+  width: 250px;
+  position: sticky;
+  top: 380px;
+  height: fit-content;
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  align-items: center;
+}
+
+.nav-item {
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  width: 100%;
+  background: linear-gradient(to right, #000000, transparent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-item.light {
+  background: linear-gradient(to right, #ffffff, transparent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-item.dark {
+  background: linear-gradient(to right, #000000, transparent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  z-index: -1;
+  border-radius: 10px;
+  mask: linear-gradient(to right, black 70%, transparent 100%);
+  -webkit-mask: linear-gradient(to right, black 70%, transparent 100%);
+}
+
+.nav-item.light::before {
+  background: #000000;
+  mask: linear-gradient(to right, black 70%, transparent 100%);
+  -webkit-mask: linear-gradient(to right, black 70%, transparent 100%);
+}
+
+.nav-item.dark::before {
+  background: #ffffff;
+  mask: linear-gradient(to right, black 70%, transparent 100%);
+  -webkit-mask: linear-gradient(to right, black 70%, transparent 100%);
+}
+
+.nav-item:hover {
+  transform: translateX(10px);
+  background: #8B0000;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: white;
+  background-clip: unset;
+}
+
+.nav-item:hover::before {
+  background: #8B0000;
+  mask: none;
+  -webkit-mask: none;
+}
+
+@media (max-width: 1024px) {
+  .left-sidebar {
+    width: 200px;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .left-sidebar {
+    width: 100%;
+    position: static;
+    margin-left: 0;
+  }
+  
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-item {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+  }
+  
+  .nav-item::before {
+    mask: none;
+    -webkit-mask: none;
+  }
+}

@@ -1,0 +1,59 @@
+.app {
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.main-container {
+  display: flex;
+  min-height: calc(100vh - 140px);
+  padding: 20px 0;
+  gap: 0;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+}
+
+.loading-spinner {
+  font-size: 3rem;
+  margin-bottom: 8px;
+  animation: bounce 1s infinite;
+}
+  
+.loading-spinner img {
+    width: 250px;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+  }
+  
+  .main-container > * {
+    width: 100%;
+  }
+}
